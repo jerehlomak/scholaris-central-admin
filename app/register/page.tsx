@@ -4,12 +4,12 @@ import { useState } from 'react'
 import { Eye, EyeOff, UserPlus, Mail, Lock, User, ArrowRight, CheckCircle2 } from 'lucide-react'
 import { toast } from 'sonner'
 import Link from 'next/link'
-import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import { motion } from 'framer-motion'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import AuthLayout from '@/components/shared/AuthLayout'
+import { SkcoolyWordmark } from '@/components/shared/SkcoolyWordmark'
 
 export default function RegisterPage() {
     const router = useRouter()
@@ -84,7 +84,7 @@ export default function RegisterPage() {
             variant="primary"
             eyebrow="Master Setup"
             heading="Set up your master admin account"
-            subheading="This creates the first Super Admin for Skooly Central — the account with full platform control."
+            subheading="This creates the first Super Admin for Skcooly Central — the account with full platform control."
         >
             <motion.div
                 initial={{ opacity: 0, scale: 0.96, y: 8 }}
@@ -95,7 +95,7 @@ export default function RegisterPage() {
 
                 <div className="relative z-10">
                     <div className="text-center mb-6 flex flex-col items-center">
-                        <Image src="/logo.png" alt="Skooly Plus" width={180} height={60} className="mb-3 object-contain" />
+                        <SkcoolyWordmark size="lg" className="mb-3" />
                         <h1 className="text-3xl font-bold text-foreground mb-2 tracking-tight">
                             {step === 1 ? 'Master Setup' : 'Verify & Secure'}
                         </h1>

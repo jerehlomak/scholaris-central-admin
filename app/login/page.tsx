@@ -5,11 +5,11 @@ import { useAuth } from '@/context/AuthContext'
 import { Eye, EyeOff, ShieldCheck, Mail, Lock, ArrowRight, CheckCircle2 } from 'lucide-react'
 import { toast } from 'sonner'
 import Link from 'next/link'
-import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import AuthLayout from '@/components/shared/AuthLayout'
+import { SkcoolyWordmark } from '@/components/shared/SkcoolyWordmark'
 
 export default function LoginPage() {
     const { login } = useAuth()
@@ -95,7 +95,7 @@ export default function LoginPage() {
 
                 <div className="relative z-10">
                     <div className="text-center mb-6 flex flex-col items-center">
-                        <Image src="/logo.png" alt="Skooly Plus" width={180} height={60} className="mb-3 object-contain" />
+                        <SkcoolyWordmark size="lg" className="mb-3" />
                         <h1 className="text-3xl font-bold text-foreground mb-2 tracking-tight">
                             {step === 1 ? 'Central Admin' : 'Two-Factor Auth'}
                         </h1>

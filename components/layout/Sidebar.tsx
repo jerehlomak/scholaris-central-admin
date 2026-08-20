@@ -61,7 +61,7 @@ function SidebarNav({ onNavigate }: { onNavigate?: () => void }) {
                     <Shield className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                    <p className="text-sm font-bold text-foreground">Skooly</p>
+                    <p className="text-sm font-bold text-foreground">Skcooly</p>
                     <p className="text-xs text-muted-foreground">Central Admin</p>
                 </div>
             </div>

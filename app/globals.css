@@ -20,22 +20,22 @@
   --text-primary: #0f172a;
   --text-secondary: #475569;
   --text-muted: #94a3b8;
-  --accent: #3b82f6;
+  --accent: #1e4da6;
   --scrollbar-track: #e2e8f0;
   --scrollbar-thumb: #94a3b8;
-  --scrollbar-thumb-hover: #3b82f6;
+  --scrollbar-thumb-hover: #1e4da6;
 
-  /* ── shadcn/ui tokens (brand: primary #1A2FA0, secondary #5CB85C) ── */
+  /* ── shadcn/ui tokens (brand: primary navy #1E4DA6, secondary gold #F5B800) ── */
   --background: 210 40% 96%;
   --foreground: 222 47% 11%;
   --card: 0 0% 100%;
   --card-foreground: 222 47% 11%;
   --popover: 0 0% 100%;
   --popover-foreground: 222 47% 11%;
-  --primary: 231 72% 36%;
+  --primary: 219 69% 38%;
   --primary-foreground: 0 0% 100%;
-  --secondary: 120 39% 54%;
-  --secondary-foreground: 0 0% 100%;
+  --secondary: 45 100% 48%;
+  --secondary-foreground: 222 47% 11%;
   --muted: 214 32% 91%;
   --muted-foreground: 215 19% 35%;
   --accent-shadcn: 214 32% 91%;
@@ -44,7 +44,7 @@
   --destructive-foreground: 210 40% 98%;
   --border: 214 12% 88%;
   --input: 214 12% 88%;
-  --ring: 231 72% 45%;
+  --ring: 219 69% 45%;
   --radius: 0.75rem;
   --sidebar-background: 0 0% 100%;
   --sidebar-foreground: 215 19% 35%;
@@ -62,22 +62,22 @@ html.dark {
   --text-primary: #f1f5f9;
   --text-secondary: #94a3b8;
   --text-muted: #475569;
-  --accent: #3b82f6;
+  --accent: #3d6fd1;
   --scrollbar-track: #0d1526;
-  --scrollbar-thumb: #1e40af;
-  --scrollbar-thumb-hover: #3b82f6;
+  --scrollbar-thumb: #1e3a6e;
+  --scrollbar-thumb-hover: #3d6fd1;
 
-  /* ── shadcn/ui tokens (brand: primary #1A2FA0, secondary #5CB85C) ── */
+  /* ── shadcn/ui tokens (brand: primary navy #1E4DA6, secondary gold #F5B800) ── */
   --background: 225 50% 8%;
   --foreground: 210 40% 96%;
   --card: 221 39% 11%;
   --card-foreground: 210 40% 96%;
   --popover: 221 39% 11%;
   --popover-foreground: 210 40% 96%;
-  --primary: 231 72% 36%;
+  --primary: 219 65% 52%;
   --primary-foreground: 0 0% 100%;
-  --secondary: 120 39% 54%;
-  --secondary-foreground: 0 0% 100%;
+  --secondary: 45 100% 48%;
+  --secondary-foreground: 222 47% 11%;
   --muted: 221 49% 10%;
   --muted-foreground: 215 20% 65%;
   --accent-shadcn: 231 30% 16%;
@@ -86,7 +86,7 @@ html.dark {
   --destructive-foreground: 210 40% 98%;
   --border: 227 23% 15%;
   --input: 227 23% 15%;
-  --ring: 231 72% 50%;
+  --ring: 219 65% 55%;
   --radius: 0.75rem;
   --sidebar-background: 223 53% 7%;
   --sidebar-foreground: 215 20% 65%;

@@ -9,8 +9,8 @@ import { TooltipProvider } from '@/components/ui/tooltip'
 const poppins = Poppins({ subsets: ['latin'], weight: ['300', '400', '500', '600', '700', '800'] })
 
 export const metadata: Metadata = {
-  title: 'Skooly Central Admin',
-  description: 'Platform management dashboard for Skooly SaaS',
+  title: 'Skcooly Central Admin',
+  description: 'Platform management dashboard for Skcooly SaaS',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -16,7 +16,7 @@ import { Button } from '@/components/ui/button'
 import { Skeleton } from '@/components/ui/skeleton'
 import StatCard from '@/components/shared/StatCard'
 
-const PIE_COLORS = ['#3b82f6', '#8b5cf6', '#10b981', '#f59e0b']
+const PIE_COLORS = ['#1E4DA6', '#F5B800', '#059669', '#7C3559']
 
 export default function AnalyticsPage() {
     const [monthlyData, setMonthlyData] = useState<MonthlyData[]>([])
@@ -66,7 +66,7 @@ export default function AnalyticsPage() {
                 {/* Summary cards */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     <StatCard label="Period Revenue" value={formatCurrency(totalRevenue)} icon={DollarSign} color="#10b981" delay={0} />
-                    <StatCard label="New Schools" value={totalNewSchools} icon={School} color="#3b82f6" delay={0.05} />
+                    <StatCard label="New Schools" value={totalNewSchools} icon={School} color="#1E4DA6" delay={0.05} />
                     <StatCard
                         label="Avg Revenue/School"
                         value={totalNewSchools ? formatCurrency(totalRevenue / totalNewSchools) : '$0'}
@@ -99,15 +99,15 @@ export default function AnalyticsPage() {
                                 <AreaChart data={monthlyData}>
                                     <defs>
                                         <linearGradient id="rev" x1="0" y1="0" x2="0" y2="1">
-                                            <stop offset="5%" stopColor="#3b82f6" stopOpacity={0.3} />
-                                            <stop offset="95%" stopColor="#3b82f6" stopOpacity={0} />
+                                            <stop offset="5%" stopColor="#1E4DA6" stopOpacity={0.3} />
+                                            <stop offset="95%" stopColor="#1E4DA6" stopOpacity={0} />
                                         </linearGradient>
                                     </defs>
                                     <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.04)" />
                                     <XAxis dataKey="month" tick={{ fontSize: 11, fill: '#64748b' }} axisLine={false} tickLine={false} />
                                     <YAxis tick={{ fontSize: 11, fill: '#64748b' }} axisLine={false} tickLine={false} />
                                     <Tooltip contentStyle={{ background: '#111827', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 8, fontSize: 12 }} />
-                                    <Area type="monotone" dataKey="revenue" stroke="#3b82f6" strokeWidth={2} fill="url(#rev)" name="Revenue ($)" />
+                                    <Area type="monotone" dataKey="revenue" stroke="#1E4DA6" strokeWidth={2} fill="url(#rev)" name="Revenue ($)" />
                                 </AreaChart>
                             </ResponsiveContainer>
                         </Card>

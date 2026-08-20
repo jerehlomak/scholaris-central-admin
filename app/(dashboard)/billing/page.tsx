@@ -64,7 +64,7 @@ export default function BillingOverviewPage() {
                                 label="Annual Recurring Revenue"
                                 value={formatCurrency(stats?.arr || 0, 'NGN')}
                                 icon={Wallet}
-                                color="#1A2FA0"
+                                color="#1E4DA6"
                                 delay={0.05}
                             />
                             <StatCard

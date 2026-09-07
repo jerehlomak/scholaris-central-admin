@@ -11,6 +11,13 @@ import { Button } from '@/components/ui/button'
 import AuthLayout from '@/components/shared/AuthLayout'
 import { SkcoolyWordmark } from '@/components/shared/SkcoolyWordmark'
 
+// Same fallback lib/api.ts already uses — without it, a missing
+// NEXT_PUBLIC_API_URL silently becomes the literal string "undefined" in
+// the fetch URL below, which the browser resolves as a path on this Next.js
+// server itself (not the backend), returning its own 404 HTML page instead
+// of JSON.
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api/v1'
+
 export default function LoginPage() {
     const { login } = useAuth()
     const [step, setStep] = useState<1 | 2>(1)
@@ -29,7 +36,7 @@ export default function LoginPage() {
         
         setLoading(true)
         try {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/central/auth/login`, {
+            const res = await fetch(`${API_URL}/central/auth/login`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email, password })
@@ -58,7 +65,7 @@ export default function LoginPage() {
         
         setLoading(true)
         try {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/central/auth/login/verify`, {
+            const res = await fetch(`${API_URL}/central/auth/login/verify`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email, otp })

@@ -11,6 +11,11 @@ import { Button } from '@/components/ui/button'
 import AuthLayout from '@/components/shared/AuthLayout'
 import { SkcoolyWordmark } from '@/components/shared/SkcoolyWordmark'
 
+// Same fallback lib/api.ts already uses — see login/page.tsx for why this
+// matters (a missing env var otherwise silently 404s against this Next.js
+// server instead of the backend).
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api/v1'
+
 export default function RegisterPage() {
     const router = useRouter()
     const [step, setStep] = useState<1 | 2>(1)
@@ -31,7 +36,7 @@ export default function RegisterPage() {
         
         setLoading(true)
         try {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/central/auth/setup`, {
+            const res = await fetch(`${API_URL}/central/auth/setup`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ name, email })
@@ -62,7 +67,7 @@ export default function RegisterPage() {
         
         setLoading(true)
         try {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/central/auth/setup/verify`, {
+            const res = await fetch(`${API_URL}/central/auth/setup/verify`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email, otp, password })

@@ -4,7 +4,6 @@ import { useState, Suspense } from 'react'
 import { ShieldCheck, Eye, EyeOff, Lock } from 'lucide-react'
 import { toast } from 'sonner'
 import Link from 'next/link'
-import Image from 'next/image'
 import { useRouter, useSearchParams } from 'next/navigation'
 import api from '@/lib/api'
 import { motion } from 'framer-motion'
@@ -12,6 +11,7 @@ import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { Label } from '@/components/ui/label'
 import AuthLayout from '@/components/shared/AuthLayout'
+import { SkcoolyWordmark } from '@/components/shared/SkcoolyWordmark'
 
 function ResetPasswordForm() {
     const router = useRouter()
@@ -138,14 +138,7 @@ export default function ResetPasswordPage() {
                 >
                     <div className="flex flex-col items-center mb-6">
                         <div className="mb-3 relative">
-                            <Image
-                                src="/logo.png"
-                                alt="Skooly Plus Logo"
-                                width={160}
-                                height={60}
-                                className="object-contain"
-                                priority
-                            />
+                            <SkcoolyWordmark size="lg" />
                         </div>
                         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20 mb-4">
                             <ShieldCheck className="w-4 h-4" />

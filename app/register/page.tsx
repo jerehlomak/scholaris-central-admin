@@ -4,12 +4,17 @@ import { useState } from 'react'
 import { Eye, EyeOff, UserPlus, Mail, Lock, User, ArrowRight, CheckCircle2 } from 'lucide-react'
 import { toast } from 'sonner'
 import Link from 'next/link'
-import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import { motion } from 'framer-motion'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import AuthLayout from '@/components/shared/AuthLayout'
+import { SkcoolyWordmark } from '@/components/shared/SkcoolyWordmark'
+
+// Same fallback lib/api.ts already uses — see login/page.tsx for why this
+// matters (a missing env var otherwise silently 404s against this Next.js
+// server instead of the backend).
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api/v1'
 
 export default function RegisterPage() {
     const router = useRouter()
@@ -31,7 +36,7 @@ export default function RegisterPage() {
         
         setLoading(true)
         try {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/central/auth/setup`, {
+            const res = await fetch(`${API_URL}/central/auth/setup`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ name, email })
@@ -62,7 +67,7 @@ export default function RegisterPage() {
         
         setLoading(true)
         try {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/central/auth/setup/verify`, {
+            const res = await fetch(`${API_URL}/central/auth/setup/verify`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email, otp, password })
@@ -84,7 +89,7 @@ export default function RegisterPage() {
             variant="primary"
             eyebrow="Master Setup"
             heading="Set up your master admin account"
-            subheading="This creates the first Super Admin for Skooly Central — the account with full platform control."
+            subheading="This creates the first Super Admin for Skcooly Central — the account with full platform control."
         >
             <motion.div
                 initial={{ opacity: 0, scale: 0.96, y: 8 }}
@@ -95,7 +100,7 @@ export default function RegisterPage() {
 
                 <div className="relative z-10">
                     <div className="text-center mb-6 flex flex-col items-center">
-                        <Image src="/logo.png" alt="Skooly Plus" width={180} height={60} className="mb-3 object-contain" />
+                        <SkcoolyWordmark size="lg" className="mb-3" />
                         <h1 className="text-3xl font-bold text-foreground mb-2 tracking-tight">
                             {step === 1 ? 'Master Setup' : 'Verify & Secure'}
                         </h1>

@@ -5,11 +5,18 @@ import { useAuth } from '@/context/AuthContext'
 import { Eye, EyeOff, ShieldCheck, Mail, Lock, ArrowRight, CheckCircle2 } from 'lucide-react'
 import { toast } from 'sonner'
 import Link from 'next/link'
-import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import AuthLayout from '@/components/shared/AuthLayout'
+import { SkcoolyWordmark } from '@/components/shared/SkcoolyWordmark'
+
+// Same fallback lib/api.ts already uses — without it, a missing
+// NEXT_PUBLIC_API_URL silently becomes the literal string "undefined" in
+// the fetch URL below, which the browser resolves as a path on this Next.js
+// server itself (not the backend), returning its own 404 HTML page instead
+// of JSON.
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api/v1'
 
 export default function LoginPage() {
     const { login } = useAuth()
@@ -29,7 +36,7 @@ export default function LoginPage() {
         
         setLoading(true)
         try {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/central/auth/login`, {
+            const res = await fetch(`${API_URL}/central/auth/login`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email, password })
@@ -58,7 +65,7 @@ export default function LoginPage() {
         
         setLoading(true)
         try {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/central/auth/login/verify`, {
+            const res = await fetch(`${API_URL}/central/auth/login/verify`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email, otp })
@@ -95,7 +102,7 @@ export default function LoginPage() {
 
                 <div className="relative z-10">
                     <div className="text-center mb-6 flex flex-col items-center">
-                        <Image src="/logo.png" alt="Skooly Plus" width={180} height={60} className="mb-3 object-contain" />
+                        <SkcoolyWordmark size="lg" className="mb-3" />
                         <h1 className="text-3xl font-bold text-foreground mb-2 tracking-tight">
                             {step === 1 ? 'Central Admin' : 'Two-Factor Auth'}
                         </h1>

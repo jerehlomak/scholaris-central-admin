@@ -81,7 +81,7 @@ export default function CentralApplicationsPage() {
                         label="Total Applications"
                         value={applications.length}
                         icon={ClipboardList}
-                        color="#1A2FA0"
+                        color="#1E4DA6"
                         delay={0}
                     />
                     <StatCard

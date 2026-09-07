@@ -71,7 +71,7 @@ export default function OverviewPage() {
 
                 {/* Stats Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                    <StatCard label="Total Schools" value={stats?.totalSchools ?? 0} icon={SchoolIcon} color="#3b82f6" subtitle="+2 this month" delay={0} />
+                    <StatCard label="Total Schools" value={stats?.totalSchools ?? 0} icon={SchoolIcon} color="#1E4DA6" subtitle="+2 this month" delay={0} />
                     <StatCard label="Active Schools" value={stats?.activeSchools ?? 0} icon={Activity} color="#10b981" delay={0.03} />
                     <StatCard label="Total Students" value={(stats?.totalStudents ?? 0).toLocaleString()} icon={Users} color="#8b5cf6" delay={0.06} />
                     <StatCard label="Total Staff" value={(stats?.totalTeachers ?? 0).toLocaleString()} icon={GraduationCap} color="#f59e0b" delay={0.09} />
@@ -98,15 +98,15 @@ export default function OverviewPage() {
                             <AreaChart data={chartData}>
                                 <defs>
                                     <linearGradient id="revenueGrad" x1="0" y1="0" x2="0" y2="1">
-                                        <stop offset="5%" stopColor="#3b82f6" stopOpacity={0.3} />
-                                        <stop offset="95%" stopColor="#3b82f6" stopOpacity={0} />
+                                        <stop offset="5%" stopColor="#1E4DA6" stopOpacity={0.3} />
+                                        <stop offset="95%" stopColor="#1E4DA6" stopOpacity={0} />
                                     </linearGradient>
                                 </defs>
                                 <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
                                 <XAxis dataKey="month" tick={{ fontSize: 11, fill: 'hsl(var(--muted-foreground))' }} axisLine={false} tickLine={false} />
                                 <YAxis tick={{ fontSize: 11, fill: 'hsl(var(--muted-foreground))' }} axisLine={false} tickLine={false} />
                                 <Tooltip contentStyle={{ background: 'hsl(var(--popover))', border: '1px solid hsl(var(--border))', borderRadius: 8, fontSize: 12, color: 'hsl(var(--popover-foreground))' }} />
-                                <Area type="monotone" dataKey="revenue" stroke="#3b82f6" strokeWidth={2} fill="url(#revenueGrad)" />
+                                <Area type="monotone" dataKey="revenue" stroke="#1E4DA6" strokeWidth={2} fill="url(#revenueGrad)" />
                             </AreaChart>
                         </ResponsiveContainer>
                     </Card>

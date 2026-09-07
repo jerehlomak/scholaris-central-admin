@@ -20,7 +20,7 @@ import ConfirmDialog from '@/components/shared/ConfirmDialog'
 
 import { SubscriptionPlan } from '@/types'
 
-const PLAN_COLORS = ['#3b82f6', '#8b5cf6', '#10b981']
+const PLAN_COLORS = ['#1E4DA6', '#F5B800', '#0d9488']
 export default function PlansPage() {
     const [plans, setPlans] = useState<SubscriptionPlan[]>([])
     const [availableModules, setAvailableModules] = useState<string[]>([])

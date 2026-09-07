@@ -12,7 +12,7 @@ interface StatCardProps {
     delay?: number
 }
 
-export default function StatCard({ label, value, icon: Icon, color = '#1A2FA0', subtitle, delay = 0 }: StatCardProps) {
+export default function StatCard({ label, value, icon: Icon, color = '#1E4DA6', subtitle, delay = 0 }: StatCardProps) {
     return (
         <motion.div
             initial={{ opacity: 0, y: 8 }}

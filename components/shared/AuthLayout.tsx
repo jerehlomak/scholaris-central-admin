@@ -45,7 +45,7 @@ export default function AuthLayout({ variant, eyebrow, heading, subheading, chil
                         <Shield className="w-5 h-5 text-white" />
                     </div>
                     <div>
-                        <p className="text-sm font-bold leading-tight">Skooly</p>
+                        <p className="text-sm font-bold leading-tight">Skcooly</p>
                         <p className="text-xs text-white/70 leading-tight">Central Admin</p>
                     </div>
                 </motion.div>
@@ -61,7 +61,7 @@ export default function AuthLayout({ variant, eyebrow, heading, subheading, chil
                     <p className="text-white/80 text-[15px] leading-relaxed">{subheading}</p>
                 </motion.div>
 
-                <p className="relative z-10 text-xs text-white/50">© {new Date().getFullYear()} Skooly. All rights reserved.</p>
+                <p className="relative z-10 text-xs text-white/50">© {new Date().getFullYear()} Skcooly. All rights reserved.</p>
             </div>
 
             {/* Form panel */}
